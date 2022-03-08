@@ -7,40 +7,19 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:orientation="vertical">
-
         <TextView
             android:id="@+id/buildTextViews"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="1+2"
-            android:textAlignment="textEnd"
+            android:clickable="false"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="48sp"
             android:visibility="visible"
-            tools:ignore="NestedWeights"
             tools:visibility="visible" />
-
-        <TextView
-            android:id="@+id/resultTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="1+2"
-            android:textAlignment="viewEnd"
-            android:textColor="@color/white"
-            android:textSize="48sp" />
-    </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="5"
         android:orientation="vertical">
 
@@ -58,14 +37,14 @@
                 android:textSize="40sp"
                 android:textColor="#666666"
                 android:background="@android:color/transparent"
-                android:text="..." />
+                android:text="@string/changeMode" />
 
             <Button
                 android:onClick="clearOnClick"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="C"
+                android:text="@string/delete"
                 android:textSize="40sp"
                 android:textColor="#b30000"
                 android:background="@android:color/transparent"
@@ -79,7 +58,7 @@
                 android:textSize="35sp"
                 android:textColor="#b30000"
                 android:background="@android:color/transparent"
-                android:text="AC" />
+                android:text="@string/deleteAll" />
 
             <Button
                 android:onClick="multiplyOnClick"
@@ -89,7 +68,7 @@
                 android:textSize="40sp"
                 android:textColor="#cc7a00"
                 android:background="@android:color/transparent"
-                android:text="*"  />
+                android:text="@string/multiply"  />
         </LinearLayout>
 
         <LinearLayout
@@ -105,7 +84,7 @@
                 android:textSize="40sp"
                 android:textColor="@color/white"
                 android:background="@android:color/transparent"
-                android:text="7"  />
+                android:text="@string/seven"  />
 
             <Button
                 android:onClick="eightOnClick"
@@ -115,7 +94,7 @@
                 android:textSize="40sp"
                 android:textColor="@color/white"
                 android:background="@android:color/transparent"
-                android:text="8"  />
+                android:text="@string/eight"  />
 
             <Button
                 android:onClick="nineOnClick"
@@ -125,7 +104,7 @@
                 android:textSize="40sp"
                 android:textColor="@color/white"
                 android:background="@android:color/transparent"
-                android:text="9"  />
+                android:text="@string/nine"  />
 
             <Button
                 android:layout_width="wrap_content"
@@ -133,7 +112,7 @@
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:onClick="divisionOnClick"
-                android:text="/"
+                android:text="@string/division"
                 android:textColor="#cc7a00"
                 android:textSize="40sp" />
         </LinearLayout>
@@ -151,7 +130,7 @@
                 android:textSize="40sp"
                 android:textColor="@color/white"
                 android:background="@android:color/transparent"
-                android:text="4"  />
+                android:text="@string/four"  />
 
             <Button
                 android:onClick="fiveOnClick"
@@ -161,7 +140,7 @@
                 android:textSize="40sp"
                 android:textColor="@color/white"
                 android:background="@android:color/transparent"
-                android:text="5"  />
+                android:text="@string/five"  />
 
             <Button
                 android:onClick="sixOnClick"
@@ -171,7 +150,7 @@
                 android:textSize="40sp"
                 android:textColor="@color/white"
                 android:background="@android:color/transparent"
-                android:text="6"  />
+                android:text="@string/six"  />
 
             <Button
                 android:onClick="addOnClick"
@@ -181,7 +160,7 @@
                 android:textSize="40sp"
                 android:textColor="#cc7a00"
                 android:background="@android:color/transparent"
-                android:text="+"/>
+                android:text="@string/add"/>
         </LinearLayout>
 
         <LinearLayout
@@ -197,7 +176,7 @@
                 android:textSize="40sp"
                 android:textColor="@color/white"
                 android:background="@android:color/transparent"
-                android:text="1"   android:layout_width="wrap_content"/>
+                android:text="@string/one"   android:layout_width="wrap_content"/>
 
             <Button
                 android:onClick="twoOnClick"
@@ -207,7 +186,7 @@
                 android:textSize="40sp"
                 android:textColor="@color/white"
                 android:background="@android:color/transparent"
-                android:text="2"  />
+                android:text="@string/two"  />
 
             <Button
                 android:onClick="threeOnClick"
@@ -217,7 +196,7 @@
                 android:textSize="40sp"
                 android:textColor="@color/white"
                 android:background="@android:color/transparent"
-                android:text="3"  />
+                android:text="@string/three"  />
 
             <Button
                 android:onClick="minusOnClick"
@@ -227,7 +206,7 @@
                 android:textSize="40sp"
                 android:textColor="#cc7a00"
                 android:background="@android:color/transparent"
-                android:text="-"/>
+                android:text="@string/minus"/>
         </LinearLayout>
 
         <LinearLayout
@@ -242,7 +221,7 @@
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:onClick="decimalOnClick"
-                android:text=","
+                android:text="@string/decimal"
                 android:textColor="#cc7a00"
                 android:textSize="40sp" />
 
@@ -252,7 +231,7 @@
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:onClick="zeroOnClick"
-                android:text="0"
+                android:text="@string/zero"
                 android:textColor="@color/white"
                 android:textSize="40sp" />
 
@@ -262,7 +241,7 @@
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:onClick="negationOnClick"
-                android:text="+/-"
+                android:text="@string/negation"
                 android:textColor="#cc7a00"
                 android:textSize="40sp" />
 
@@ -272,7 +251,7 @@
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:onClick="equalsOnClick"
-                android:text="="
+                android:text="@string/equal"
                 android:textColor="#cc7a00"
                 android:textSize="40sp" />
         </LinearLayout>
