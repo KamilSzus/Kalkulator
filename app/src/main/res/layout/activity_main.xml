@@ -40,6 +40,7 @@
                 android:text="@string/changeMode" />
 
             <Button
+                android:id="@+id/deleteSingle"
                 android:onClick="clearOnClick"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"

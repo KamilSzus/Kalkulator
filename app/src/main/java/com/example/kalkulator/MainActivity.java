@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,16 +17,23 @@ public class MainActivity extends AppCompatActivity {
 
     TextView buildTextViews;
     String  mathOperationInProgress = "";
+    Button deleteSingleButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        findTextView();
+        buildTextViews = findViewById(R.id.buildTextViews);
+        initLongClickDelete();
     }
 
-    private void findTextView() {
-        buildTextViews = findViewById(R.id.buildTextViews);
+    private void initLongClickDelete() {
+        deleteSingleButton = findViewById(R.id.deleteSingle);
+        deleteSingleButton.setOnLongClickListener(v -> {
+            mathOperationInProgress = "";
+            buildTextViews.setText("");
+            return true;
+        });
     }
 
     public void inBuild(String operation){
