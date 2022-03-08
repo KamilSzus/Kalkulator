@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_weight="2"
         android:orientation="vertical">
 
@@ -41,8 +40,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="8"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
         android:orientation="vertical">
 
         <LinearLayout
@@ -53,7 +52,7 @@
             tools:ignore="NestedWeights">
 
             <Button
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:textSize="40sp"
@@ -63,7 +62,7 @@
 
             <Button
                 android:onClick="clearOnClick"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="C"
@@ -73,18 +72,18 @@
                 tools:ignore="NestedWeights" />
 
             <Button
-                android:onClick="powerOnClick"
-                android:layout_width="0dp"
+                android:onClick="clearAllOnClick"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:textSize="35sp"
-                android:textColor="#cc7a00"
+                android:textColor="#b30000"
                 android:background="@android:color/transparent"
-                android:text="x^2" />
+                android:text="AC" />
 
             <Button
                 android:onClick="multiplyOnClick"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:textSize="40sp"
@@ -100,7 +99,7 @@
 
             <Button
                 android:onClick="sevenOnClick"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:textSize="40sp"
@@ -110,7 +109,7 @@
 
             <Button
                 android:onClick="eightOnClick"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:textSize="40sp"
@@ -120,7 +119,7 @@
 
             <Button
                 android:onClick="nineOnClick"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:textSize="40sp"
@@ -129,7 +128,7 @@
                 android:text="9"  />
 
             <Button
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
@@ -146,7 +145,7 @@
 
             <Button
                 android:onClick="fourOnClick"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:textSize="40sp"
@@ -156,7 +155,7 @@
 
             <Button
                 android:onClick="fiveOnClick"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:textSize="40sp"
@@ -166,7 +165,7 @@
 
             <Button
                 android:onClick="sixOnClick"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:textSize="40sp"
@@ -176,7 +175,7 @@
 
             <Button
                 android:onClick="addOnClick"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:textSize="40sp"
@@ -193,17 +192,16 @@
 
             <Button
                 android:onClick="oneOnClick"
-                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:textSize="40sp"
                 android:textColor="@color/white"
                 android:background="@android:color/transparent"
-                android:text="1"  />
+                android:text="1"   android:layout_width="wrap_content"/>
 
             <Button
                 android:onClick="twoOnClick"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:textSize="40sp"
@@ -213,7 +211,7 @@
 
             <Button
                 android:onClick="threeOnClick"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:textSize="40sp"
@@ -223,7 +221,7 @@
 
             <Button
                 android:onClick="minusOnClick"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:textSize="40sp"
@@ -239,7 +237,7 @@
             tools:ignore="NestedWeights">
 
             <Button
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
@@ -249,7 +247,7 @@
                 android:textSize="40sp" />
 
             <Button
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
@@ -259,17 +257,17 @@
                 android:textSize="40sp" />
 
             <Button
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:onClick="bracketsOnClick"
-                android:text="()"
+                android:onClick="negationOnClick"
+                android:text="+/-"
                 android:textColor="#cc7a00"
                 android:textSize="40sp" />
 
             <Button
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"

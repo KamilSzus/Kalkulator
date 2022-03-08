@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
     TextView buildTextViews;
     TextView resultTextView;
     String  mathOperationInProgress = "";
-    String resultOperation = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,14 +109,18 @@ public class MainActivity extends AppCompatActivity {
         double result = 0.0;
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("rhino");
         try{
-            Toast.makeText(this, mathOperationInProgress, Toast.LENGTH_SHORT).show();
             System.out.println(mathOperationInProgress);
-            result = (double)engine.eval(mathOperationInProgress);
+            result = (double) engine.eval(mathOperationInProgress);
         }catch(Exception e){
-            //Toast.makeText(this,"Exception Raised",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Wrong build math operation",Toast.LENGTH_LONG).show();
         }
         mathOperationInProgress = "";
-        resultOperation = String.valueOf(result);
-        resultTextView.setText(resultOperation);
+        resultTextView.setText( String.valueOf(result));
+    }
+
+    public void clearAllOnClick(View view) {
+    }
+
+    public void negationOnClick(View view) {
     }
 }
