@@ -7,13 +7,14 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Optional;
+
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 
 public class MainActivity extends AppCompatActivity {
 
     TextView buildTextViews;
-    TextView resultTextView;
     String  mathOperationInProgress = "";
 
     @Override
@@ -25,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void findTextView() {
         buildTextViews = findViewById(R.id.buildTextViews);
-        resultTextView = findViewById(R.id.resultTextView);
     }
 
     public void inBuild(String operation){
@@ -34,12 +34,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clearOnClick(View view) {
-
+        mathOperationInProgress = deleteLastSign();
+        buildTextViews.setText(mathOperationInProgress);
     }
 
-    public void powerOnClick(View view) {
-
+    private String deleteLastSign() {
+        return Optional.ofNullable(mathOperationInProgress)
+                .filter(str -> str.length() != 0)
+                .map(str -> str.substring(0, str.length() - 1))
+                .orElse(mathOperationInProgress);
     }
+
+    public void clearAllOnClick(View view) {
+        mathOperationInProgress = "";
+        buildTextViews.setText("");
+    }
+
 
     public void multiplyOnClick(View view) {
         inBuild("*");
@@ -101,24 +111,19 @@ public class MainActivity extends AppCompatActivity {
         inBuild("0");
     }
 
-    public void bracketsOnClick(View view) {
-        //TODO:inBuild("7");
-    }
-
     public void equalsOnClick(View view) {
-        double result = 0.0;
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("rhino");
         try{
             System.out.println(mathOperationInProgress);
-            result = (double) engine.eval(mathOperationInProgress);
+            double result = (double) engine.eval(mathOperationInProgress);
+            String temp = String.valueOf(result);
+            System.out.println(temp);
+            buildTextViews.setText(temp);
+            mathOperationInProgress = String.valueOf(result);
         }catch(Exception e){
             Toast.makeText(this,"Wrong build math operation",Toast.LENGTH_LONG).show();
         }
-        mathOperationInProgress = "";
-        resultTextView.setText( String.valueOf(result));
-    }
 
-    public void clearAllOnClick(View view) {
     }
 
     public void negationOnClick(View view) {
