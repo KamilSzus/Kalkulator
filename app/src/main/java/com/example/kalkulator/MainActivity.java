@@ -1,13 +1,15 @@
 package com.example.kalkulator;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+import androidx.core.view.WindowInsetsControllerCompat;
 import java.util.Optional;
 
 import javax.script.ScriptEngine;
@@ -25,15 +27,29 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         buildTextViews = findViewById(R.id.buildTextViews);
         initLongClickDelete();
+        hideSystemBars();
     }
+
+    private void hideSystemBars() {
+        WindowInsetsControllerCompat windowInsetsController =
+                ViewCompat.getWindowInsetsController(getWindow().getDecorView());
+        if (windowInsetsController == null) {
+            return;
+        }
+        windowInsetsController.setSystemBarsBehavior(WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
+        windowInsetsController.hide(WindowInsetsCompat.Type.systemBars());
+    }
+
 
     private void initLongClickDelete() {
         deleteSingleButton = findViewById(R.id.deleteSingle);
-        deleteSingleButton.setOnLongClickListener(v -> {
-            mathOperationInProgress = "";
-            buildTextViews.setText("");
-            return true;
-        });
+        if(deleteSingleButton!=null) {
+            deleteSingleButton.setOnLongClickListener(v -> {
+                mathOperationInProgress = "";
+                buildTextViews.setText("");
+                return true;
+            });
+        }
     }
 
     public void inBuild(String operation){

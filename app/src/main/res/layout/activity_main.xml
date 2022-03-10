@@ -7,20 +7,30 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-        <TextView
-            android:id="@+id/buildTextViews"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="false"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="48sp"
-            android:visibility="visible"
-            tools:visibility="visible" />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="5"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/buildTextViews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:textAlignment="viewEnd"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        android:visibility="visible"
+        tools:visibility="visible" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="9"
         android:orientation="vertical">
 
         <LinearLayout
@@ -31,45 +41,48 @@
             tools:ignore="NestedWeights">
 
             <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="40sp"
-                android:textColor="#666666"
                 android:background="@android:color/transparent"
-                android:text="@string/changeMode" />
+                android:text="@string/changeMode"
+                android:textColor="#666666"
+                android:textSize="40sp" />
 
             <Button
                 android:id="@+id/deleteSingle"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
                 android:onClick="clearOnClick"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:text="@string/delete"
-                android:textSize="40sp"
-                android:textColor="#b30000"
-                android:background="@android:color/transparent"
-                tools:ignore="NestedWeights" />
+                android:textColor="#B71C1C"
+                android:textSize="40sp" />
 
             <Button
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
                 android:onClick="clearAllOnClick"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:textSize="35sp"
-                android:textColor="#b30000"
-                android:background="@android:color/transparent"
-                android:text="@string/deleteAll" />
+                android:text="@string/deleteAll"
+                android:textColor="#B71C1C"
+                android:textSize="35sp" />
 
             <Button
-                android:onClick="multiplyOnClick"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="40sp"
-                android:textColor="#cc7a00"
                 android:background="@android:color/transparent"
-                android:text="@string/multiply"  />
+                android:onClick="multiplyOnClick"
+                android:text="@string/multiply"
+                android:textColor="#cc7a00"
+                android:textSize="40sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -78,36 +91,40 @@
             android:layout_weight="1">
 
             <Button
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
                 android:onClick="sevenOnClick"
+                android:text="@string/seven"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
+
+            <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="40sp"
-                android:textColor="@color/white"
                 android:background="@android:color/transparent"
-                android:text="@string/seven"  />
-
-            <Button
                 android:onClick="eightOnClick"
+                android:text="@string/eight"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
+
+            <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="40sp"
-                android:textColor="@color/white"
                 android:background="@android:color/transparent"
-                android:text="@string/eight"  />
-
-            <Button
                 android:onClick="nineOnClick"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:textSize="40sp"
+                android:text="@string/nine"
                 android:textColor="@color/white"
-                android:background="@android:color/transparent"
-                android:text="@string/nine"  />
+                android:textSize="40sp" />
 
             <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -117,6 +134,7 @@
                 android:textColor="#cc7a00"
                 android:textSize="40sp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -124,44 +142,48 @@
             tools:ignore="NestedWeights">
 
             <Button
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
                 android:onClick="fourOnClick"
+                android:text="@string/four"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
+
+            <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="40sp"
-                android:textColor="@color/white"
                 android:background="@android:color/transparent"
-                android:text="@string/four"  />
-
-            <Button
                 android:onClick="fiveOnClick"
+                android:text="@string/five"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
+
+            <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="40sp"
-                android:textColor="@color/white"
                 android:background="@android:color/transparent"
-                android:text="@string/five"  />
-
-            <Button
                 android:onClick="sixOnClick"
+                android:text="@string/six"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
+
+            <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="40sp"
-                android:textColor="@color/white"
                 android:background="@android:color/transparent"
-                android:text="@string/six"  />
-
-            <Button
                 android:onClick="addOnClick"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:textSize="40sp"
+                android:text="@string/add"
                 android:textColor="#cc7a00"
-                android:background="@android:color/transparent"
-                android:text="@string/add"/>
+                android:textSize="40sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -171,43 +193,48 @@
             tools:ignore="NestedWeights">
 
             <Button
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
                 android:onClick="oneOnClick"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:textSize="40sp"
+                android:text="@string/one"
                 android:textColor="@color/white"
-                android:background="@android:color/transparent"
-                android:text="@string/one"   android:layout_width="wrap_content"/>
+                android:textSize="40sp" />
 
             <Button
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
                 android:onClick="twoOnClick"
+                android:text="@string/two"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
+
+            <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="40sp"
-                android:textColor="@color/white"
                 android:background="@android:color/transparent"
-                android:text="@string/two"  />
-
-            <Button
                 android:onClick="threeOnClick"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:textSize="40sp"
+                android:text="@string/three"
                 android:textColor="@color/white"
-                android:background="@android:color/transparent"
-                android:text="@string/three"  />
+                android:textSize="40sp" />
 
             <Button
-                android:onClick="minusOnClick"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="40sp"
-                android:textColor="#cc7a00"
                 android:background="@android:color/transparent"
-                android:text="@string/minus"/>
+                android:onClick="minusOnClick"
+                android:text="@string/minus"
+                android:textColor="#cc7a00"
+                android:textSize="40sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -217,6 +244,7 @@
             tools:ignore="NestedWeights">
 
             <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -227,6 +255,7 @@
                 android:textSize="40sp" />
 
             <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -237,6 +266,7 @@
                 android:textSize="40sp" />
 
             <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -247,6 +277,7 @@
                 android:textSize="40sp" />
 
             <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
