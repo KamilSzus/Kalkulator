@@ -1,5 +1,6 @@
 package com.example.kalkulator;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import javax.script.ScriptEngine;
@@ -20,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     TextView buildTextViews;
     String  mathOperationInProgress = "";
     Button deleteSingleButton;
+    List<Numbers> numbersList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +33,55 @@ public class MainActivity extends AppCompatActivity {
         buildTextViews = findViewById(R.id.buildTextViews);
         initLongClickDelete();
         hideSystemBars();
+        initNumbersButton();
+        numbersList.forEach(number -> number.getNumberButtonId().setOnClickListener(v -> {
+            switch (v.getId()){
+                case R.id.zero:
+                    inBuild("0");
+                    break;
+                case R.id.one:
+                    inBuild("1");
+                    break;
+                case R.id.two:
+                    inBuild("2");
+                    break;
+                case R.id.three:
+                    inBuild("3");
+                    break;
+                case R.id.four:
+                    inBuild("4");
+                    break;
+                case R.id.five:
+                    inBuild("5");
+                    break;
+                case R.id.six:
+                    inBuild("6");
+                    break;
+                case R.id.seven:
+                    inBuild("7");
+                    break;
+                case R.id.eight:
+                    inBuild("8");
+                    break;
+                case R.id.nine:
+                    inBuild("9");
+                    break;
+            }
+        }));
+
+    }
+
+    private void initNumbersButton() {
+        numbersList.add(new Numbers("zero",findViewById(R.id.zero)));
+        numbersList.add(new Numbers("one",findViewById(R.id.one)));
+        numbersList.add(new Numbers("two",findViewById(R.id.two)));
+        numbersList.add(new Numbers("three",findViewById(R.id.three)));
+        numbersList.add(new Numbers("four",findViewById(R.id.four)));
+        numbersList.add(new Numbers("five",findViewById(R.id.five)));
+        numbersList.add(new Numbers("six",findViewById(R.id.six)));
+        numbersList.add(new Numbers("seven",findViewById(R.id.seven)));
+        numbersList.add(new Numbers("eight",findViewById(R.id.eight)));
+        numbersList.add(new Numbers("nine",findViewById(R.id.nine)));
     }
 
     private void hideSystemBars() {
@@ -48,6 +102,10 @@ public class MainActivity extends AppCompatActivity {
                 mathOperationInProgress = "";
                 buildTextViews.setText("");
                 return true;
+            });
+            deleteSingleButton.setOnClickListener(v -> {
+                mathOperationInProgress = deleteLastSign();
+                buildTextViews.setText(mathOperationInProgress);
             });
         }
     }
@@ -83,44 +141,8 @@ public class MainActivity extends AppCompatActivity {
         inBuild("/");
     }
 
-    public void sevenOnClick(View view) {
-        inBuild("7");
-    }
-
-    public void eightOnClick(View view) {
-        inBuild("8");
-    }
-
-    public void nineOnClick(View view) {
-        inBuild("9");
-    }
-
-    public void fourOnClick(View view) {
-        inBuild("4");
-    }
-
-    public void fiveOnClick(View view) {
-        inBuild("5");
-    }
-
-    public void sixOnClick(View view) {
-        inBuild("6");
-    }
-
     public void addOnClick(View view) {
         inBuild("+");
-    }
-
-    public void oneOnClick(View view) {
-        inBuild("1");
-    }
-
-    public void twoOnClick(View view) {
-        inBuild("2");
-    }
-
-    public void threeOnClick(View view) {
-        inBuild("3");
     }
 
     public void minusOnClick(View view) {
@@ -131,17 +153,13 @@ public class MainActivity extends AppCompatActivity {
         inBuild(".");
     }
 
-    public void zeroOnClick(View view) {
-        inBuild("0");
-    }
-
     public void equalsOnClick(View view) {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("rhino");
         try{
             System.out.println(mathOperationInProgress);
             double result = (double) engine.eval(mathOperationInProgress);
             String temp = String.valueOf(result);
-            System.out.println(temp);
+            //System.out.println(temp);
             buildTextViews.setText(temp);
             mathOperationInProgress = String.valueOf(result);
         }catch(Exception e){
@@ -151,5 +169,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void negationOnClick(View view) {
+    }
+
+    public void sinOnClick(View view) {
+    }
+
+    public void cosOnClick(View view) {
+
+    }
+
+    public void tanOnClick(View view) {
+    }
+
+    public void lnOnClick(View view) {
+    }
+
+    public void sqrtOnClick(View view) {
+    }
+
+    public void powTwoOnClick(View view) {
+    }
+
+    public void powYOnClick(View view) {
+    }
+
+    public void logOnClick(View view) {
     }
 }

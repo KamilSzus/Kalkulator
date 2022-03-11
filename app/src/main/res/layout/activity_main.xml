@@ -42,6 +42,7 @@
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/menu"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -57,13 +58,13 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:onClick="clearOnClick"
                 android:text="@string/delete"
                 android:textColor="#B71C1C"
                 android:textSize="40sp" />
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/deleteAll"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -75,6 +76,7 @@
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/multiply"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -92,39 +94,40 @@
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/seven"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:onClick="sevenOnClick"
                 android:text="@string/seven"
                 android:textColor="@color/white"
                 android:textSize="40sp" />
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/eight"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:onClick="eightOnClick"
                 android:text="@string/eight"
                 android:textColor="@color/white"
                 android:textSize="40sp" />
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/nine"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:onClick="nineOnClick"
                 android:text="@string/nine"
                 android:textColor="@color/white"
                 android:textSize="40sp" />
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/division"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -143,39 +146,40 @@
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/four"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:onClick="fourOnClick"
                 android:text="@string/four"
                 android:textColor="@color/white"
                 android:textSize="40sp" />
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/five"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:onClick="fiveOnClick"
                 android:text="@string/five"
                 android:textColor="@color/white"
                 android:textSize="40sp" />
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/six"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:onClick="sixOnClick"
                 android:text="@string/six"
                 android:textColor="@color/white"
                 android:textSize="40sp" />
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/add"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -194,39 +198,40 @@
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/one"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:onClick="oneOnClick"
                 android:text="@string/one"
                 android:textColor="@color/white"
                 android:textSize="40sp" />
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/two"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:onClick="twoOnClick"
                 android:text="@string/two"
                 android:textColor="@color/white"
                 android:textSize="40sp" />
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/three"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:onClick="threeOnClick"
                 android:text="@string/three"
                 android:textColor="@color/white"
                 android:textSize="40sp" />
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/minus"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -245,6 +250,7 @@
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/decimal"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -256,17 +262,18 @@
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/zero"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:onClick="zeroOnClick"
                 android:text="@string/zero"
                 android:textColor="@color/white"
                 android:textSize="40sp" />
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/negation"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -277,6 +284,7 @@
                 android:textSize="40sp" />
 
             <Button
+                android:id="@+id/equal"
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
