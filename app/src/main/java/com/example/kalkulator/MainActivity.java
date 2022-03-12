@@ -1,9 +1,7 @@
 package com.example.kalkulator;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,17 +21,76 @@ public class MainActivity extends AppCompatActivity {
 
     TextView buildTextViews;
     String  mathOperationInProgress = "";
-    Button deleteSingleButton;
     List<Numbers> numbersList = new ArrayList<>();
+    List<SimplyOperation> simplyOperationList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         buildTextViews = findViewById(R.id.buildTextViews);
-        initLongClickDelete();
         hideSystemBars();
         initNumbersButton();
+        onClickNumbers();
+        initSimplyOperation();
+        initOperationButton();
+    }
+
+    private void initOperationButton() {
+        simplyOperationList.forEach(operation -> operation.getOperationButton().setOnClickListener(v -> {
+            switch (v.getId()){
+                case R.id.add:
+                    inBuild("+");
+                    break;
+                case R.id.minus:
+                    inBuild("-");
+                    break;
+                case R.id.multiply:
+                    inBuild("*");
+                    break;
+                case R.id.division:
+                    inBuild("/");
+                    break;
+                case R.id.decimal:
+                    inBuild(",");
+                    break;
+                case R.id.negation:
+                    break;
+                case R.id.equal:
+                    equal();
+                    break;
+                case R.id.deleteSingle:
+                    mathOperationInProgress = deleteLastSign();
+                    buildTextViews.setText(mathOperationInProgress);
+                    break;
+                case R.id.deleteAll:
+                    mathOperationInProgress = "";
+                    buildTextViews.setText("");
+                    break;
+            }
+        }));
+        simplyOperationList.forEach(simplyOperation -> simplyOperation.getOperationButton().setOnLongClickListener(v -> {
+            if(v.getId()==R.id.deleteSingle){
+                mathOperationInProgress = "";
+                buildTextViews.setText("");
+            }
+            return true;
+        }));
+    }
+
+    private void initSimplyOperation() {
+        simplyOperationList.add(new SimplyOperation("add",findViewById(R.id.add)));
+        simplyOperationList.add(new SimplyOperation("minus",findViewById(R.id.minus)));
+        simplyOperationList.add(new SimplyOperation("multiply",findViewById(R.id.multiply)));
+        simplyOperationList.add(new SimplyOperation("division",findViewById(R.id.division)));
+        simplyOperationList.add(new SimplyOperation("decimal",findViewById(R.id.decimal)));
+        simplyOperationList.add(new SimplyOperation("negation",findViewById(R.id.negation)));
+        simplyOperationList.add(new SimplyOperation("equal",findViewById(R.id.equal)));
+        simplyOperationList.add(new SimplyOperation("deleteSingle",findViewById(R.id.deleteSingle)));
+        simplyOperationList.add(new SimplyOperation("deleteAll",findViewById(R.id.deleteAll)));
+    }
+
+    private void onClickNumbers() {
         numbersList.forEach(number -> number.getNumberButtonId().setOnClickListener(v -> {
             switch (v.getId()){
                 case R.id.zero:
@@ -66,9 +123,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.nine:
                     inBuild("9");
                     break;
-            }
-        }));
-
+            } }));
     }
 
     private void initNumbersButton() {
@@ -94,30 +149,13 @@ public class MainActivity extends AppCompatActivity {
         windowInsetsController.hide(WindowInsetsCompat.Type.systemBars());
     }
 
-
-    private void initLongClickDelete() {
-        deleteSingleButton = findViewById(R.id.deleteSingle);
-        if(deleteSingleButton!=null) {
-            deleteSingleButton.setOnLongClickListener(v -> {
-                mathOperationInProgress = "";
-                buildTextViews.setText("");
-                return true;
-            });
-            deleteSingleButton.setOnClickListener(v -> {
-                mathOperationInProgress = deleteLastSign();
-                buildTextViews.setText(mathOperationInProgress);
-            });
+    private void inBuild(String operation){
+        if(mathOperationInProgress.length()<=20) {
+            mathOperationInProgress += operation;
+            buildTextViews.setText(mathOperationInProgress);
+        }else{
+            Toast.makeText(this, "max size of input", Toast.LENGTH_LONG).show();
         }
-    }
-
-    public void inBuild(String operation){
-        mathOperationInProgress += operation;
-        buildTextViews.setText(mathOperationInProgress);
-    }
-
-    public void clearOnClick(View view) {
-        mathOperationInProgress = deleteLastSign();
-        buildTextViews.setText(mathOperationInProgress);
     }
 
     private String deleteLastSign() {
@@ -127,33 +165,7 @@ public class MainActivity extends AppCompatActivity {
                 .orElse(mathOperationInProgress);
     }
 
-    public void clearAllOnClick(View view) {
-        mathOperationInProgress = "";
-        buildTextViews.setText("");
-    }
-
-
-    public void multiplyOnClick(View view) {
-        inBuild("*");
-    }
-
-    public void divisionOnClick(View view) {
-        inBuild("/");
-    }
-
-    public void addOnClick(View view) {
-        inBuild("+");
-    }
-
-    public void minusOnClick(View view) {
-        inBuild("-");
-    }
-
-    public void decimalOnClick(View view) {
-        inBuild(".");
-    }
-
-    public void equalsOnClick(View view) {
+    private void equal() {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("rhino");
         try{
             System.out.println(mathOperationInProgress);

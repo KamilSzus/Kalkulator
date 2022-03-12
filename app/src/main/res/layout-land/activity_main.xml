@@ -57,7 +57,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:onClick="clearOnClick"
                 android:text="@string/delete"
                 android:textColor="#B71C1C"
                 android:textSize="30sp" />
@@ -69,7 +68,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:onClick="clearAllOnClick"
                 android:text="@string/deleteAll"
                 android:textColor="#B71C1C"
                 android:textSize="30sp" />
@@ -81,7 +79,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:onClick="multiplyOnClick"
                 android:text="@string/multiply"
                 android:textColor="#cc7a00"
                 android:textSize="30sp" />
@@ -245,7 +242,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:onClick="divisionOnClick"
                 android:text="@string/division"
                 android:textColor="#cc7a00"
                 android:textSize="30sp" />
@@ -297,7 +293,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:onClick="addOnClick"
                 android:text="@string/add"
                 android:textColor="#cc7a00"
                 android:textSize="30sp" />
@@ -349,7 +344,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:onClick="minusOnClick"
                 android:text="@string/minus"
                 android:textColor="#cc7a00"
                 android:textSize="30sp" />
@@ -368,7 +362,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:onClick="decimalOnClick"
                 android:text="@string/decimal"
                 android:textColor="#cc7a00"
                 android:textSize="30sp" />
@@ -403,7 +396,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:onClick="equalsOnClick"
                 android:text="@string/equal"
                 android:textColor="#cc7a00"
                 android:textSize="30sp" />
