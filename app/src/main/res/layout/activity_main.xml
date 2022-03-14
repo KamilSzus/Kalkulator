@@ -7,12 +7,6 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical">
-
     <TextView
         android:id="@+id/buildTextViews"
         android:layout_width="match_parent"
@@ -21,10 +15,9 @@
         android:textAlignment="viewEnd"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="34sp"
+        android:textSize="40sp"
         android:visibility="visible"
         tools:visibility="visible" />
-    </LinearLayout>
 
 
     <LinearLayout
@@ -49,7 +42,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/changeMode"
                 android:textColor="#666666"
-                android:textSize="40sp" />
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/deleteSingle"
@@ -60,7 +53,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/delete"
                 android:textColor="#B71C1C"
-                android:textSize="40sp" />
+                android:textSize="24sp" />
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
@@ -71,7 +64,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/deleteAll"
                 android:textColor="#B71C1C"
-                android:textSize="35sp" />
+                android:textSize="24sp" />
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
@@ -82,7 +75,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/multiply"
                 android:textColor="#cc7a00"
-                android:textSize="40sp" />
+                android:textSize="24sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -99,7 +92,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/seven"
                 android:textColor="@color/white"
-                android:textSize="40sp" />
+                android:textSize="24sp" />
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
@@ -110,7 +103,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/eight"
                 android:textColor="@color/white"
-                android:textSize="40sp" />
+                android:textSize="24sp" />
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
@@ -121,7 +114,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/nine"
                 android:textColor="@color/white"
-                android:textSize="40sp" />
+                android:textSize="24sp" />
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
@@ -132,7 +125,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/division"
                 android:textColor="#cc7a00"
-                android:textSize="40sp" />
+                android:textSize="24sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -150,7 +143,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/four"
                 android:textColor="@color/white"
-                android:textSize="40sp" />
+                android:textSize="24sp" />
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
@@ -161,7 +154,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/five"
                 android:textColor="@color/white"
-                android:textSize="40sp" />
+                android:textSize="24sp" />
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
@@ -172,7 +165,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/six"
                 android:textColor="@color/white"
-                android:textSize="40sp" />
+                android:textSize="24sp" />
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
@@ -183,7 +176,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/add"
                 android:textColor="#cc7a00"
-                android:textSize="40sp" />
+                android:textSize="24sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -201,7 +194,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/one"
                 android:textColor="@color/white"
-                android:textSize="40sp" />
+                android:textSize="24sp" />
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
@@ -212,7 +205,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/two"
                 android:textColor="@color/white"
-                android:textSize="40sp" />
+                android:textSize="24sp" />
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
@@ -223,7 +216,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/three"
                 android:textColor="@color/white"
-                android:textSize="40sp" />
+                android:textSize="24sp" />
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
@@ -234,7 +227,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/minus"
                 android:textColor="#cc7a00"
-                android:textSize="40sp" />
+                android:textSize="24sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -252,7 +245,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/decimal"
                 android:textColor="#cc7a00"
-                android:textSize="40sp" />
+                android:textSize="24sp" />
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
@@ -263,7 +256,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/zero"
                 android:textColor="@color/white"
-                android:textSize="40sp" />
+                android:textSize="24sp" />
 
             <Button
                 style="?android:attr/buttonBarButtonStyle"
@@ -275,7 +268,7 @@
                 android:onClick="negationOnClick"
                 android:text="@string/negation"
                 android:textColor="#cc7a00"
-                android:textSize="40sp" />
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/equal"
@@ -286,7 +279,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/equal"
                 android:textColor="#cc7a00"
-                android:textSize="40sp" />
+                android:textSize="24sp" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

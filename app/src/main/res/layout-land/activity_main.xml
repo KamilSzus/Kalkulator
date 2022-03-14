@@ -48,7 +48,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/changeMode"
                 android:textColor="#666666"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/deleteSingle"
@@ -59,7 +59,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/delete"
                 android:textColor="#B71C1C"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/deleteAll"
@@ -70,7 +70,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/deleteAll"
                 android:textColor="#B71C1C"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/multiply"
@@ -81,7 +81,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/multiply"
                 android:textColor="#cc7a00"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -101,7 +101,7 @@
                 android:onClick="sinOnClick"
                 android:text="@string/sin"
                 android:textColor="@color/gold"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/cos"
@@ -113,7 +113,7 @@
                 android:onClick="cosOnClick"
                 android:text="@string/cos"
                 android:textColor="@color/gold"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/tan"
@@ -125,7 +125,7 @@
                 android:onClick="tanOnClick"
                 android:text="@string/tan"
                 android:textColor="@color/gold"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/ln"
@@ -137,7 +137,7 @@
                 android:onClick="lnOnClick"
                 android:text="@string/ln"
                 android:textColor="#cc7a00"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -169,7 +169,7 @@
                 android:onClick="powTwoOnClick"
                 android:text="@string/pow2"
                 android:textColor="@color/gold"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/powY"
@@ -181,7 +181,7 @@
                 android:onClick="powYOnClick"
                 android:text="@string/powY"
                 android:textColor="@color/gold"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/log"
@@ -193,7 +193,7 @@
                 android:onClick="logOnClick"
                 android:text="@string/log"
                 android:textColor="#cc7a00"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
         </LinearLayout>
 
 
@@ -211,7 +211,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/seven"
                 android:textColor="@color/white"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/eight"
@@ -222,7 +222,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/eight"
                 android:textColor="@color/white"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/nine"
@@ -233,7 +233,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/nine"
                 android:textColor="@color/white"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/division"
@@ -244,7 +244,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/division"
                 android:textColor="#cc7a00"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -262,7 +262,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/four"
                 android:textColor="@color/white"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/five"
@@ -273,7 +273,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/five"
                 android:textColor="@color/white"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/six"
@@ -284,7 +284,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/six"
                 android:textColor="@color/white"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/add"
@@ -295,7 +295,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/add"
                 android:textColor="#cc7a00"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -313,7 +313,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/one"
                 android:textColor="@color/white"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/two"
@@ -324,7 +324,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/two"
                 android:textColor="@color/white"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/three"
@@ -335,7 +335,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/three"
                 android:textColor="@color/white"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/minus"
@@ -346,7 +346,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/minus"
                 android:textColor="#cc7a00"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -364,7 +364,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/decimal"
                 android:textColor="#cc7a00"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/zero"
@@ -375,7 +375,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/zero"
                 android:textColor="@color/white"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/negation"
@@ -387,7 +387,7 @@
                 android:onClick="negationOnClick"
                 android:text="@string/negation"
                 android:textColor="#cc7a00"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/equal"
@@ -398,7 +398,7 @@
                 android:background="@android:color/transparent"
                 android:text="@string/equal"
                 android:textColor="#cc7a00"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
         </LinearLayout>
 
     </LinearLayout>

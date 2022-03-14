@@ -28,4 +28,8 @@
     <string name="pow2">X^2</string>
     <string name="powY">X^Y</string>
     <string name="log">log</string>
+    <string name="simply">Prosty</string>
+    <string name="advance">Zaawansowany</string>
+    <string name="about">O aplikacji</string>
+    <string name="exit">Wyjscie</string>
 </resources>
