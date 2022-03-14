@@ -1,7 +1,9 @@
 package com.example.kalkulator;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView buildTextViews;
     String  mathOperationInProgress = "";
+    Button backToMenu;
     List<Numbers> numbersList = new ArrayList<>();
     List<SimplyOperation> simplyOperationList = new ArrayList<>();
 
@@ -29,6 +32,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         buildTextViews = findViewById(R.id.buildTextViews);
+        backToMenu = findViewById(R.id.menu);
+        backToMenu.setOnClickListener(v->{
+            Intent intent = new Intent(this, Menu.class);
+            startActivity(intent);
+        });
         hideSystemBars();
         initNumbersButton();
         onClickNumbers();

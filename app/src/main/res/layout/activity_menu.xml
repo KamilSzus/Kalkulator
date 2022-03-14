@@ -7,15 +7,14 @@
     android:background="@color/black"
     >
 
-    <EditText
+    <TextView
         android:id="@+id/editTextTextPersonName"
         style="@style/Widget.AppCompat.AutoCompleteTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
         android:text="@string/name"
         android:textAlignment="center"
+        android:clickable="false"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +33,7 @@
         tools:ignore="MissingConstraints">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/simply"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/simply"
@@ -45,40 +44,35 @@
             android:backgroundTint="@color/gold" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/advance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:text="@string/advance"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button"
             android:backgroundTint="@color/gold"
             />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/about"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:text="@string/about"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button2"
             android:backgroundTint="@color/gold"
             />
 
-
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/exit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:text="@string/exit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button3"
             android:backgroundTint="@color/gold"
 
             />
