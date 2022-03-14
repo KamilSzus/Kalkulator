@@ -9,14 +9,15 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Kalkulator"
+        android:text="@string/name"
         android:textAlignment="center"
         android:textColor="@android:color/holo_red_dark"
-        android:textSize="34sp"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -41,7 +42,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            android:backgroundTint="@android:color/holo_red_dark" />
+            android:backgroundTint="@color/gold" />
 
         <Button
             android:id="@+id/button2"
@@ -52,7 +53,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button"
-            android:backgroundTint="@android:color/holo_red_dark"
+            android:backgroundTint="@color/gold"
             />
 
         <Button
@@ -65,7 +66,7 @@
             app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button2"
-            android:backgroundTint="@android:color/holo_red_dark"
+            android:backgroundTint="@color/gold"
             />
 
 
@@ -78,7 +79,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button3"
-            android:backgroundTint="@android:color/holo_red_dark"
+            android:backgroundTint="@color/gold"
 
             />
     </LinearLayout>
