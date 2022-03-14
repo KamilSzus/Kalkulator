@@ -58,6 +58,6 @@
             android:textColor="@color/gold"
             android:textSize="30sp"
             android:clickable="false"
-            android:text="Opis: Prosty kalkulator z możliwością przejścia na zaawansowany" />
+            android:text="@string/description" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

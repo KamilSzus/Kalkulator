@@ -35,4 +35,5 @@
     <string name="name">Kalkulator</string>
     <string name="back">Powrót</string>
     <string name="author">Twórca: Kamil Szustak</string>
+    <string name="description">Opis: Prosty kalkulator z możliwością przejścia na zaawansowany</string>
 </resources>
