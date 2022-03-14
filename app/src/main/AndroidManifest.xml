@@ -9,6 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Kalkulator">
         <activity
+            android:name=".AdvanceCalculator"
+            android:exported="false" />
+        <activity
             android:name=".About"
             android:exported="false" />
         <activity

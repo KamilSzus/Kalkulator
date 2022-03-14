@@ -24,7 +24,7 @@ public class Menu extends AppCompatActivity {
                         runNewMethodWithName(MainActivity.class);
                         break;
                     case R.id.advance:
-                        setContentView(R.layout.activity_main);
+                        runNewMethodWithName(AdvanceCalculator.class);
                         break;
                     case R.id.about:
                         runNewMethodWithName(About.class);
