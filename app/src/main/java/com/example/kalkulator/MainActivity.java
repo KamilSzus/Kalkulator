@@ -15,11 +15,12 @@ public class MainActivity extends SimplyCalculator {
             Intent intent = new Intent(this, Menu.class);
             startActivity(intent);
         });
+        buildTextViews.setShowSoftInputOnFocus(false);
         hideSystemBars();
         initNumbersButton();
         onClickNumbers();
         initSimplyOperation();
-        initOperationButton();
+        onClickSimplyOperation();
     }
 
 }

@@ -49,7 +49,7 @@ public class SimplyCalculator extends AppCompatActivity {
         numbersList.add(new Numbers("nine",findViewById(R.id.nine)));
     }
 
-    protected void initOperationButton() {
+    protected void onClickSimplyOperation() {
         simplyOperationList.forEach(operation -> operation.getOperationButton().setOnClickListener(v -> {
             switch (v.getId()){
                 case R.id.add:
@@ -156,12 +156,12 @@ public class SimplyCalculator extends AppCompatActivity {
     private void equal() {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("rhino");
         try{
-            System.out.println(mathOperationInProgress);
-            double result = (double) engine.eval(mathOperationInProgress);
-            String temp = String.valueOf(result);
-            //System.out.println(temp);
-            buildTextViews.setText(temp);
-            mathOperationInProgress = String.valueOf(result);
+            mathOperationInProgress = mathOperationInProgress.replaceAll("S","Math.s");
+            mathOperationInProgress = mathOperationInProgress.replaceAll("C","Math.c");
+            mathOperationInProgress = mathOperationInProgress.replaceAll("T","Math.t");
+            mathOperationInProgress = mathOperationInProgress.replaceAll("L","Math.l");
+            mathOperationInProgress = String.valueOf(engine.eval(mathOperationInProgress));
+            buildTextViews.setText(mathOperationInProgress);
         }catch(Exception e){
             Toast.makeText(this,"Wrong build math operation",Toast.LENGTH_LONG).show();
         }
