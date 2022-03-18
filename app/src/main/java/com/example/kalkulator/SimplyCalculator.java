@@ -73,6 +73,7 @@ public class SimplyCalculator extends AppCompatActivity {
                     inBuild(",");
                     break;
                 case R.id.negation:
+                    negation();
                     break;
                 case R.id.equal:
                     equal();
@@ -93,6 +94,20 @@ public class SimplyCalculator extends AppCompatActivity {
             }
             return true;
         }));
+    }
+
+    private void negation() {
+        //TODO:Wymyslic cos lepszego
+        if(mathOperationInProgress.endsWith("-")){
+            mathOperationInProgress=mathOperationInProgress.substring(0,mathOperationInProgress.length()-1);
+            inBuild("+");
+        }
+        else {
+            if(mathOperationInProgress.endsWith("+")){
+                mathOperationInProgress=mathOperationInProgress.substring(0,mathOperationInProgress.length()-1);
+            }
+            inBuild("-");
+        }
     }
 
     private void deleteAllOrSingleChar() {
