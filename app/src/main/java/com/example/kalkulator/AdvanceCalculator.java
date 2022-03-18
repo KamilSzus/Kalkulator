@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class AdvanceCalculator extends SimplyCalculator {
 
@@ -43,7 +44,7 @@ public class AdvanceCalculator extends SimplyCalculator {
                     inBuild("Log(");
                     break;
                 case R.id.brackets:
-                    inBuild(")");
+                    matchBrackets();
                     break;
                 case R.id.pow2:
                     inBuild("Pow(");
@@ -53,6 +54,17 @@ public class AdvanceCalculator extends SimplyCalculator {
         if(savedInstanceState!=null){
             mathOperationInProgress = savedInstanceState.getString("BUILD_TEXT_VIEW");
             buildTextViews.setText(mathOperationInProgress);
+        }
+    }
+
+    private void matchBrackets() {
+        long numberOfCloseBracket = mathOperationInProgress.chars().filter(ch -> ch == ')').count();
+        long numberOfOpenBracket = mathOperationInProgress.chars().filter(ch -> ch == '(').count();
+        if(numberOfOpenBracket>numberOfCloseBracket){
+            inBuild(")");
+        }
+        else {
+            inBuild("(");
         }
     }
 
