@@ -1,6 +1,7 @@
 package com.example.kalkulator;
 
 import android.content.Intent;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -25,6 +26,8 @@ public class SimplyCalculator extends AppCompatActivity {
     protected Button backToMenu;
     private final List<Numbers> numbersList = new ArrayList<>();
     private final List<SimplyOperation> simplyOperationList = new ArrayList<>();
+    private long timestampLastClick;
+
 
     protected void initSimplyOperation() {
         simplyOperationList.add(new SimplyOperation("add",findViewById(R.id.add)));
@@ -75,8 +78,7 @@ public class SimplyCalculator extends AppCompatActivity {
                     equal();
                     break;
                 case R.id.deleteSingle:
-                    mathOperationInProgress = deleteLastSign();
-                    buildTextViews.setText(mathOperationInProgress);
+                    deleteAllOrSingleChar();
                     break;
                 case R.id.deleteAll:
                     mathOperationInProgress = "";
@@ -91,6 +93,17 @@ public class SimplyCalculator extends AppCompatActivity {
             }
             return true;
         }));
+    }
+
+    private void deleteAllOrSingleChar() {
+        if((SystemClock.elapsedRealtime() - timestampLastClick) < 200) {
+            mathOperationInProgress = "";
+            buildTextViews.setText("");
+            return;
+        }
+        timestampLastClick = SystemClock.elapsedRealtime();
+        mathOperationInProgress = deleteLastSign();
+        buildTextViews.setText(mathOperationInProgress);
     }
 
     protected void onClickNumbers() {
@@ -180,6 +193,7 @@ public class SimplyCalculator extends AppCompatActivity {
         mathOperation = mathOperation.replaceAll("C", "Math.c");
         mathOperation = mathOperation.replaceAll("T", "Math.t");
         mathOperation = mathOperation.replaceAll("L", "Math.l");
+        mathOperation = mathOperation.replaceAll("P", "Math.p");
         return mathOperation;
     }
 
