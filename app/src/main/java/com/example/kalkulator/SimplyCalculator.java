@@ -14,6 +14,7 @@ import androidx.core.view.WindowInsetsControllerCompat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
@@ -164,16 +165,22 @@ public class SimplyCalculator extends AppCompatActivity {
     private void equal() {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("rhino");
         try{
-            mathOperationInProgress = mathOperationInProgress.replaceAll("S","Math.s");
-            mathOperationInProgress = mathOperationInProgress.replaceAll("C","Math.c");
-            mathOperationInProgress = mathOperationInProgress.replaceAll("T","Math.t");
-            mathOperationInProgress = mathOperationInProgress.replaceAll("L","Math.l");
-            mathOperationInProgress = String.valueOf(engine.eval(mathOperationInProgress));
+            String copy = refactorStringToJavaScriptMathOperation(mathOperationInProgress);
+
+            mathOperationInProgress = String.valueOf(engine.eval(copy));
             buildTextViews.setText(mathOperationInProgress);
         }catch(Exception e){
             Toast.makeText(this,"Wrong build math operation",Toast.LENGTH_LONG).show();
         }
 
+    }
+
+    private String refactorStringToJavaScriptMathOperation(String mathOperation) {
+        mathOperation = mathOperation.replaceAll("S", "Math.s");
+        mathOperation = mathOperation.replaceAll("C", "Math.c");
+        mathOperation = mathOperation.replaceAll("T", "Math.t");
+        mathOperation = mathOperation.replaceAll("L", "Math.l");
+        return mathOperation;
     }
 
     public void negationOnClick(View view) {
