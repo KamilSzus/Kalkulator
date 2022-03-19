@@ -37,4 +37,5 @@
     <string name="author">Twórca: Kamil Szustak</string>
     <string name="description">Opis: Prosty kalkulator z możliwością przejścia na zaawansowany</string>
     <string name="brackets">()</string>
+    <string name="percent">%</string>
 </resources>

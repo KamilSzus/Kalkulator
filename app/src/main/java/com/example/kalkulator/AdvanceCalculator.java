@@ -25,6 +25,14 @@ public class AdvanceCalculator extends SimplyCalculator {
         onClickSimplyOperation();
         initAdvanceOperation();
 
+        onClickAdvanceCalculatorButtons();
+        if(savedInstanceState!=null){
+            mathOperationInProgress = savedInstanceState.getString("BUILD_TEXT_VIEW");
+            buildTextViews.setText(mathOperationInProgress);
+        }
+    }
+
+    private void onClickAdvanceCalculatorButtons() {
         operationList.forEach(advanceOperation -> advanceOperation.getOperationButton().setOnClickListener(v -> {
             switch(v.getId()){
                 case R.id.sin:
@@ -46,14 +54,19 @@ public class AdvanceCalculator extends SimplyCalculator {
                     matchBrackets();
                     break;
                 case R.id.pow2:
-                    inBuild("Pow(");
+                    inBuild("^2");
+                    break;
+                case R.id.sqrt:
+                    inBuild("Sqrt(");
+                    break;
+                case R.id.percent:
+                    inBuild("%");
+                    break;
+                case R.id.powY:
+                    inBuild("^");
                     break;
             }
         }));
-        if(savedInstanceState!=null){
-            mathOperationInProgress = savedInstanceState.getString("BUILD_TEXT_VIEW");
-            buildTextViews.setText(mathOperationInProgress);
-        }
     }
 
     private void matchBrackets() {
@@ -88,5 +101,7 @@ public class AdvanceCalculator extends SimplyCalculator {
         operationList.add(new AdvanceOperation("sqrt",findViewById(R.id.sqrt)));
         operationList.add(new AdvanceOperation("pow2",findViewById(R.id.pow2)));
         operationList.add(new AdvanceOperation("brackets",findViewById(R.id.brackets)));
+        operationList.add(new AdvanceOperation("percent",findViewById(R.id.percent)));
+        operationList.add(new AdvanceOperation("powY",findViewById(R.id.powY)));
     }
 }

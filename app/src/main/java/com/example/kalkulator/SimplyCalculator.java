@@ -194,8 +194,11 @@ public class SimplyCalculator extends AppCompatActivity {
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("rhino");
         try{
             String copy = refactorStringToJavaScriptMathOperation(mathOperationInProgress);
-
-            mathOperationInProgress = String.valueOf(engine.eval(copy));
+            mathOperationInProgress = String.valueOf(Math.round((double)engine.eval(copy) * 10000.0) / 10000.0);
+            if(mathOperationInProgress.equals("NaN")){
+                Toast.makeText(this, "Wrong build math operation", Toast.LENGTH_LONG).show();
+                return;
+            }
             buildTextViews.setText(mathOperationInProgress);
         }catch(Exception e){
             Toast.makeText(this,"Wrong build math operation",Toast.LENGTH_LONG).show();
