@@ -36,19 +36,19 @@ public class AdvanceCalculator extends SimplyCalculator {
         operationList.forEach(advanceOperation -> advanceOperation.getOperationButton().setOnClickListener(v -> {
             switch(v.getId()){
                 case R.id.sin:
-                    inBuild("Sin(");
+                    inBuild("sin(");
                     break;
                 case R.id.cos:
-                    inBuild("Cos(");
+                    inBuild("cos(");
                     break;
                 case R.id.tan:
-                    inBuild("Tan(");
+                    inBuild("tan(");
                     break;
                 case R.id.ln:
-                    inBuild("Ln(");
+                    inBuild("ln(");
                     break;
                 case R.id.log:
-                    inBuild("Log(");
+                    inBuild("log(");
                     break;
                 case R.id.brackets:
                     matchBrackets();
@@ -57,7 +57,7 @@ public class AdvanceCalculator extends SimplyCalculator {
                     inBuild("^2");
                     break;
                 case R.id.sqrt:
-                    inBuild("Sqrt(");
+                    inBuild("sqrt(");
                     break;
                 case R.id.percent:
                     inBuild("%");

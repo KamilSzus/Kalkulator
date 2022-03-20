@@ -2,7 +2,6 @@ package com.example.kalkulator;
 
 import android.content.Intent;
 import android.os.SystemClock;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -12,13 +11,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
 
+import net.objecthunter.exp4j.ExpressionBuilder;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Stream;
-
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
 
 public class SimplyCalculator extends AppCompatActivity {
     protected TextView buildTextViews;
@@ -156,6 +153,7 @@ public class SimplyCalculator extends AppCompatActivity {
                     break;
             } }));
     }
+
     protected void initMenuButton() {
         backToMenu = findViewById(R.id.menu);
         backToMenu.setOnClickListener(v -> {
@@ -190,32 +188,18 @@ public class SimplyCalculator extends AppCompatActivity {
                 .orElse(mathOperationInProgress);
     }
 
-    private void equal() {
-        ScriptEngine engine = new ScriptEngineManager().getEngineByName("rhino");
+    public void equal() {
+
         try{
-            String copy = refactorStringToJavaScriptMathOperation(mathOperationInProgress);
-            mathOperationInProgress = String.valueOf(Math.round((double)engine.eval(copy) * 10000.0) / 10000.0);
-            if(mathOperationInProgress.equals("NaN")){
-                Toast.makeText(this, "Wrong build math operation", Toast.LENGTH_LONG).show();
-                return;
-            }
+            double result = new ExpressionBuilder(mathOperationInProgress)
+                    .build()
+                    .evaluate();
+            mathOperationInProgress=String.valueOf(Math.round(result * 10000.0) / 10000.0);
             buildTextViews.setText(mathOperationInProgress);
-        }catch(Exception e){
+        }catch(ArithmeticException|IllegalArgumentException e){
             Toast.makeText(this,"Wrong build math operation",Toast.LENGTH_LONG).show();
         }
 
-    }
-
-    private String refactorStringToJavaScriptMathOperation(String mathOperation) {
-        mathOperation = mathOperation.replaceAll("S", "Math.s");
-        mathOperation = mathOperation.replaceAll("C", "Math.c");
-        mathOperation = mathOperation.replaceAll("T", "Math.t");
-        mathOperation = mathOperation.replaceAll("L", "Math.l");
-        mathOperation = mathOperation.replaceAll("P", "Math.p");
-        return mathOperation;
-    }
-
-    public void negationOnClick(View view) {
     }
 
 }

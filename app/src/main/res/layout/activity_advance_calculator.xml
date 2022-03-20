@@ -400,7 +400,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:onClick="negationOnClick"
                 android:text="@string/negation"
                 android:textColor="#cc7a00"
                 android:textSize="20sp" />
