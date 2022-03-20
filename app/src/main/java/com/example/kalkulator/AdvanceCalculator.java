@@ -45,10 +45,10 @@ public class AdvanceCalculator extends SimplyCalculator {
                     inBuild("tan(");
                     break;
                 case R.id.ln:
-                    inBuild("ln(");
+                    inBuild("log(");
                     break;
                 case R.id.log:
-                    inBuild("log(");
+                    inBuild("log10(");
                     break;
                 case R.id.brackets:
                     matchBrackets();

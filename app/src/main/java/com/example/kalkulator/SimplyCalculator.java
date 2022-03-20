@@ -67,7 +67,7 @@ public class SimplyCalculator extends AppCompatActivity {
                     inBuild("/");
                     break;
                 case R.id.decimal:
-                    inBuild(",");
+                    inBuild(".");
                     break;
                 case R.id.negation:
                     negation();
