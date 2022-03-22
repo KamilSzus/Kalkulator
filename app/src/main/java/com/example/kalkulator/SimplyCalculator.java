@@ -53,34 +53,22 @@ public class SimplyCalculator extends AppCompatActivity {
 
     protected void onClickSimplyOperation() {
         simplyOperationList.forEach(operation -> operation.getOperationButton().setOnClickListener(v -> {
-            switch (v.getId()){
-                case R.id.add:
-                    inBuild("+");
-                    break;
-                case R.id.minus:
-                    inBuild("-");
-                    break;
-                case R.id.multiply:
-                    inBuild("*");
-                    break;
-                case R.id.division:
-                    inBuild("/");
-                    break;
-                case R.id.decimal:
-                    inBuild(".");
-                    break;
-                case R.id.negation:
+            switch (operation.getOperationButton().getText().toString()){
+                case "+/-":
                     negation();
                     break;
-                case R.id.equal:
+                case "=":
                     equal();
                     break;
-                case R.id.deleteSingle:
+                case "C":
                     deleteAllOrSingleChar();
                     break;
-                case R.id.deleteAll:
+                case "AC":
                     mathOperationInProgress = "";
                     buildTextViews.setText("");
+                    break;
+                default:
+                    inBuild(operation.getOperationButton().getText().toString());
                     break;
             }
         }));
@@ -120,38 +108,8 @@ public class SimplyCalculator extends AppCompatActivity {
 
     protected void onClickNumbers() {
         numbersList.forEach(number -> number.getNumberButtonId().setOnClickListener(v -> {
-            switch (v.getId()){
-                case R.id.zero:
-                    inBuild("0");
-                    break;
-                case R.id.one:
-                    inBuild("1");
-                    break;
-                case R.id.two:
-                    inBuild("2");
-                    break;
-                case R.id.three:
-                    inBuild("3");
-                    break;
-                case R.id.four:
-                    inBuild("4");
-                    break;
-                case R.id.five:
-                    inBuild("5");
-                    break;
-                case R.id.six:
-                    inBuild("6");
-                    break;
-                case R.id.seven:
-                    inBuild("7");
-                    break;
-                case R.id.eight:
-                    inBuild("8");
-                    break;
-                case R.id.nine:
-                    inBuild("9");
-                    break;
-            } }));
+            inBuild(number.getNumberButtonId().getText().toString());
+            }));
     }
 
     protected void initMenuButton() {

@@ -34,35 +34,35 @@ public class AdvanceCalculator extends SimplyCalculator {
 
     private void onClickAdvanceCalculatorButtons() {
         operationList.forEach(advanceOperation -> advanceOperation.getOperationButton().setOnClickListener(v -> {
-            switch(v.getId()){
-                case R.id.sin:
+            switch(advanceOperation.getOperationButton().getText().toString()){
+                case "sin":
                     inBuild("sin(");
                     break;
-                case R.id.cos:
+                case "cos":
                     inBuild("cos(");
                     break;
-                case R.id.tan:
+                case "tan":
                     inBuild("tan(");
                     break;
-                case R.id.ln:
+                case "ln":
                     inBuild("log(");
                     break;
-                case R.id.log:
+                case "log":
                     inBuild("log10(");
                     break;
-                case R.id.brackets:
+                case "()":
                     matchBrackets();
                     break;
-                case R.id.pow2:
+                case "X^2":
                     inBuild("^2");
                     break;
-                case R.id.sqrt:
+                case "sqrt":
                     inBuild("sqrt(");
                     break;
-                case R.id.percent:
+                case "%":
                     inBuild("%");
                     break;
-                case R.id.powY:
+                case "X^Y":
                     inBuild("^");
                     break;
             }
