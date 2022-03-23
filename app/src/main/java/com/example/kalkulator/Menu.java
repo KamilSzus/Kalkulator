@@ -19,17 +19,17 @@ public class Menu extends AppCompatActivity {
         initMenuButtons();
 
         menuButtons.forEach(button -> button.getMenuButton().setOnClickListener(v -> {
-                switch(v.getId()){
-                    case R.id.simply:
+                switch(button.getMenuButton().getText().toString()){
+                    case "Prosty":
                         runNewMethodWithName(MainActivity.class);
                         break;
-                    case R.id.advance:
+                    case "Zaawansowany":
                         runNewMethodWithName(AdvanceCalculator.class);
                         break;
-                    case R.id.about:
+                    case "O Aplikacji":
                         runNewMethodWithName(About.class);
                         break;
-                    case R.id.exit:
+                    case "Powrót":
                         finish();
                         System.exit(0);
                         break;
