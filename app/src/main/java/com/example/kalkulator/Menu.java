@@ -29,10 +29,10 @@ public class Menu extends AppCompatActivity {
                     case "O Aplikacji":
                         runNewMethodWithName(About.class);
                         break;
-                    case "Powrót":
-                        finish();
-                        System.exit(0);
-                        break;
+                  //  case "Powrót":
+                  //      finish();
+                  //      System.exit(0);
+                  //      break;
                 }
             }));
     }
@@ -41,7 +41,7 @@ public class Menu extends AppCompatActivity {
         menuButtons.add(new MenuButtons("Simply",findViewById(R.id.simply)));
         menuButtons.add(new MenuButtons("Advance",findViewById(R.id.advance)));
         menuButtons.add(new MenuButtons("About",findViewById(R.id.about)));
-        menuButtons.add(new MenuButtons("Exit",findViewById(R.id.exit)));
+       // menuButtons.add(new MenuButtons("Exit",findViewById(R.id.exit)));
     }
 
     private void runNewMethodWithName(Class<?> className){
